@@ -21,7 +21,7 @@
       </a-menu>
     </a-col>
     <a-col flex="100px">
-      <div>{{ store.state.user?.loginUser?.userName ?? "未登录" }}</div>
+      <div>{{ store.state?.user?.loginUser?.userName ?? "未登录" }}</div>
     </a-col>
   </a-row>
 </template>
@@ -42,7 +42,7 @@ const visibleRoutes = computed(() => {
     if (item.meta?.hidden) {
       return false;
     }
-    // todo 根据权限过滤菜单
+    // 根据权限过滤菜单
     if (
       !checkAccess(store.state.user?.loginUser, item?.meta?.access as string)
     ) {
